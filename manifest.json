@@ -1,0 +1,11 @@
+{
+	"id": "obsidian-frontmatter-viewmode",
+	"name": "Set View Mode per Note",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Use YAML frontmatter to specify a view mode per note.",
+	"author": "Alex Davies",
+	"authorUrl": "https://github.com/AlexDavies8",
+	"fundingUrl": "https://ko-fi.com/alexdavies",
+	"isDesktopOnly": false
+}
