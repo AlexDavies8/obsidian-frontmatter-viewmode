@@ -58,7 +58,7 @@ export default class ViewmodeFrontmatterPlugin extends Plugin {
 			const fileCache = this.app.metadataCache.getFileCache(file);
 			if (!fileCache || !fileCache.frontmatter) return;
 
-			const { 'force-view': viewmode } = fileCache.frontmatter;
+			const { 'prefer-view': viewmode } = fileCache.frontmatter;
 			if (!viewmode) return;
 
 			const view = this.app.workspace.getActiveViewOfType(MarkdownView);

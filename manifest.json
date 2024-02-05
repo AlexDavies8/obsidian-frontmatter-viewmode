@@ -1,7 +1,7 @@
 {
 	"id": "frontmatter-viewmode",
 	"name": "Set View Mode per Note",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"minAppVersion": "0.15.0",
 	"description": "Use YAML frontmatter to specify a view mode per note.",
 	"author": "Alex Davies",
