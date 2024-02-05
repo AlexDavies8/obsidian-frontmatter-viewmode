@@ -4,6 +4,8 @@ This plugin allows you to set a view mode when opening specific notes. No config
 
 This can be done via the `prefer-view` property, which can have the values `read`, `edit`, `edit-source`, or `edit-preview`.
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A8U5GAJ)
+
 ## Examples
 
 ```yaml
