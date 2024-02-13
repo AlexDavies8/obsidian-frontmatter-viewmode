@@ -1,5 +1,4 @@
 import { MarkdownView, Plugin } from 'obsidian';
-import * as path from 'path';
 
 enum Modes {
 	Reading = 'read',
@@ -14,11 +13,7 @@ export default class ViewmodeFrontmatterPlugin extends Plugin {
 
 	async refreshEditConfig() {
 		const prev = this.livePreviewConfig;
-		this.livePreviewConfig = JSON.parse(
-			await this.app.vault.adapter.read(
-				path.join(this.app.vault.configDir, 'app.json')
-			)
-		).livePreview ?? true; // Default value for editing style is Preview
+		this.livePreviewConfig = JSON.parse(await this.app.vault.adapter.read(`${this.app.vault.configDir}/app.json`)).livePreview ?? true; // Default value for editing style is Preview
 		return prev !== this.livePreviewConfig;
 	}
 
@@ -30,11 +25,11 @@ export default class ViewmodeFrontmatterPlugin extends Plugin {
 				state.mode = 'preview';
 				break;
 			case Modes.Editing: // Use the cached preferred editing style and update the cached value in the background
-				this.refreshEditConfig().then(async changed => changed 
-					&& await this.setViewMode(view, this.livePreviewConfig 
-						? Modes.Preview 
+				this.refreshEditConfig().then(async changed => changed
+					&& await this.setViewMode(view, this.livePreviewConfig
+						? Modes.Preview
 						: Modes.Source)
-					);
+				);
 			case Modes.Source:
 			case Modes.Preview:
 				state.mode = 'source';
